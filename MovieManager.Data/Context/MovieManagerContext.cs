@@ -10,5 +10,7 @@ namespace MovieManager.Data.Context
         public virtual DbSet<Movie> Movies { get; set; }
 
         public virtual DbSet<Session> Sessions { get; set; }
+
+        public virtual DbSet<Genre> Genres { get; set; }
     }
 }

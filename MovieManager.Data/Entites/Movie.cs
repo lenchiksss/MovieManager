@@ -19,5 +19,8 @@ namespace MovieManager.Data.Entites
 
         [Required]
         public DateTime ReleaseDate { get; set; }
+
+        [Required]
+        public Genre Genre { get; set; }
     }
 }
