@@ -24,7 +24,7 @@ namespace MovieManager.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpserMovieAsync([FromServices] IRequestHandler<UpsertMovieCommand, MovieResponse> upsertMovieCommand, [FromBody] UpsertMovieRequest request)
+        public async Task<IActionResult> UpsertMovieAsync([FromServices] IRequestHandler<UpsertMovieCommand, MovieResponse> upsertMovieCommand, [FromBody] UpsertMovieRequest request)
         {
             var movie = await upsertMovieCommand.Handle(new UpsertMovieCommand
             {

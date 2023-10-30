@@ -13,13 +13,13 @@ namespace MovieManager.Api.Controllers
     public class GenreController : ControllerBase
     {
         [HttpGet]
-        public async Task<IActionResult> GetSessionAsync([FromServices] IRequestHandler<IList<GenreResponse>> getGenreQuery)
+        public async Task<IActionResult> UpsertGenreAsync([FromServices] IRequestHandler<IList<GenreResponse>> getGenreQuery)
         {
             return Ok(await getGenreQuery.Handle());
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpserSessionAsync([FromServices] IRequestHandler<UpsertGenreCommand, GenreResponse> upsertGenreCommand, [FromBody] UpsertGenreCommand request)
+        public async Task<IActionResult> UpsertGenreAsync([FromServices] IRequestHandler<UpsertGenreCommand, GenreResponse> upsertGenreCommand, [FromBody] UpsertGenreCommand request)
         {
             var genre = await upsertGenreCommand.Handle(new UpsertGenreCommand
             {

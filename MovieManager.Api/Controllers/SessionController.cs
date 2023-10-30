@@ -18,7 +18,7 @@ namespace MovieManager.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpserSessionAsync([FromServices] IRequestHandler<UpsertSessionCommand, SessionResponse> upsertSessionCommand, [FromBody] UpsertSessionRequest request)
+        public async Task<IActionResult> UpsertSessionAsync([FromServices] IRequestHandler<UpsertSessionCommand, SessionResponse> upsertSessionCommand, [FromBody] UpsertSessionRequest request)
         {
             var session = await upsertSessionCommand.Handle(new UpsertSessionCommand
             {
